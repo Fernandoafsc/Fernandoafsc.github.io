@@ -1,0 +1,27 @@
+# Arquivos a ignorar em controle de versão
+
+# Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# Node (se usar build tools)
+node_modules/
+package-lock.json
+dist/
+
+# Logs
+*.log
+npm-debug.log
+
+# Arquivos de backup
+*.bak
+*.backup
+*~
