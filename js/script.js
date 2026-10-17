@@ -5,7 +5,7 @@
 /* ====== CONFIGURAÇÃO (edite aqui) ====== */
 const CONFIG = {
     // Número no formato internacional, só dígitos: 55 + DDD + número
-    whatsapp: '5500000000000',
+    whatsapp: '5521994101793',
     whatsappMessage: 'Olá! Vim pelo site e gostaria de conversar sobre um projeto.',
     email: 'fernando.aafsc@gmail.com'
 };
