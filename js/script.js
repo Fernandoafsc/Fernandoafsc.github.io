@@ -127,6 +127,92 @@ document.addEventListener('DOMContentLoaded', function () {
         sections.forEach(s => spy.observe(s));
     }
 
+    /* ---------- Galerias dos projetos + lightbox ---------- */
+    const lightbox = document.getElementById('lightbox');
+    let lbItems = [];
+    let lbIndex = 0;
+    let lbTitle = '';
+    let lbReturnFocus = null;
+
+    // Cada galeria vira uma lista de { src, alt, caption } (miniaturas ou telas de celular)
+    document.querySelectorAll('.project-gallery').forEach(gallery => {
+        const buttons = [...gallery.querySelectorAll('.thumb, .phone-frame')];
+        const items = buttons.map(btn => {
+            const img = btn.querySelector('img');
+            return { src: img.getAttribute('src'), alt: img.alt, caption: btn.dataset.caption || img.alt };
+        });
+        const title = gallery.dataset.title || '';
+        const main = gallery.querySelector('.gallery-main');
+        const mainImg = main ? main.querySelector('img') : null;
+        let current = 0;
+
+        buttons.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                if (main) {
+                    current = i;
+                    mainImg.src = items[i].src;
+                    mainImg.alt = items[i].alt;
+                    buttons.forEach(b => b.classList.toggle('is-active', b === btn));
+                } else {
+                    openLightbox(items, i, title, btn);
+                }
+            });
+        });
+        if (main) main.addEventListener('click', () => openLightbox(items, current, title, main));
+    });
+
+    function openLightbox(items, index, title, trigger) {
+        if (!lightbox) return;
+        lbItems = items;
+        lbTitle = title;
+        lbReturnFocus = trigger;
+        showLightbox(index);
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        lightbox.querySelector('.lightbox-close').focus();
+    }
+
+    function showLightbox(index) {
+        lbIndex = (index + lbItems.length) % lbItems.length;
+        const item = lbItems[lbIndex];
+        const img = lightbox.querySelector('.lightbox-figure img');
+        img.src = item.src;
+        img.alt = item.alt;
+        lightbox.querySelector('.lightbox-title').textContent = lbTitle + ' —';
+        lightbox.querySelector('.lightbox-caption').textContent = item.caption;
+        lightbox.querySelector('.lightbox-count').textContent = `${lbIndex + 1}/${lbItems.length}`;
+        const multiple = lbItems.length > 1;
+        lightbox.querySelectorAll('.lightbox-nav').forEach(b => { b.hidden = !multiple; });
+    }
+
+    function closeLightbox() {
+        lightbox.hidden = true;
+        document.body.style.overflow = '';
+        if (lbReturnFocus) lbReturnFocus.focus();
+    }
+
+    if (lightbox) {
+        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        lightbox.querySelector('.lightbox-prev').addEventListener('click', () => showLightbox(lbIndex - 1));
+        lightbox.querySelector('.lightbox-next').addEventListener('click', () => showLightbox(lbIndex + 1));
+        // Clique fora da imagem fecha
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', e => {
+            if (lightbox.hidden) return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowLeft') showLightbox(lbIndex - 1);
+            else if (e.key === 'ArrowRight') showLightbox(lbIndex + 1);
+            else if (e.key === 'Tab') {
+                // Mantém o foco dentro do lightbox
+                const focusables = [...lightbox.querySelectorAll('button:not([hidden])')];
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+        });
+    }
+
     /* ---------- Ano no rodapé ---------- */
     const anoEl = document.getElementById('ano-atual');
     if (anoEl) anoEl.textContent = new Date().getFullYear();

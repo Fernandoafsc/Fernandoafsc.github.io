@@ -149,35 +149,131 @@
             <p>Sistemas reais, desenvolvidos e documentados do zero. Repositórios privados &mdash; código disponível sob solicitação.</p>
         </div>
 
-        <div class="projects-grid">
-            <article class="project-card reveal">
-                <div class="project-head">
+        <div class="projects-list">
+            <!-- SGPSI (repo PrestServWeb) -->
+            <article class="project-feature reveal">
+                <div class="project-gallery" data-title="SGPSI">
+                    <button type="button" class="gallery-main browser-frame" aria-label="Ampliar captura de tela">
+                        <span class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img src="imagens/projetos/sgpsi/dashboard.webp" alt="Painel do SGPSI com indicadores, OS por status e faturas em aberto" width="1400" height="877" loading="lazy" decoding="async">
+                    </button>
+                    <div class="gallery-thumbs">
+                        <button type="button" class="thumb is-active" data-caption="Painel: KPIs, OS por status, ordens recentes e faturas a vencer"><img src="imagens/projetos/sgpsi/dashboard.webp" alt="Painel" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Ordens de serviço com filtros e desempenho de prestadores"><img src="imagens/projetos/sgpsi/ordens-servico.webp" alt="Ordens de serviço" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Detalhe da OS: itens, anexos, transições de status e histórico"><img src="imagens/projetos/sgpsi/ordem-detalhe.webp" alt="Detalhe da OS" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Faturamento com resumo financeiro e exportação CSV"><img src="imagens/projetos/sgpsi/faturamento.webp" alt="Faturamento" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Agenda diária de prestadores com verificação de conflito"><img src="imagens/projetos/sgpsi/agenda.webp" alt="Agenda" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Chat com IA sobre a operação, com resposta em stream"><img src="imagens/projetos/sgpsi/chat-ia.webp" alt="Chat com IA" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Perfis e acessos: matriz Perfil × Permissão editável"><img src="imagens/projetos/sgpsi/perfis-acessos.webp" alt="Perfis e acessos" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Fatura em PDF com o papel timbrado da empresa"><img src="imagens/projetos/sgpsi/pdf-fatura.webp" alt="Fatura em PDF" loading="lazy"></button>
+                    </div>
+                </div>
+                <div class="project-info">
                     <span class="project-type"><i class="fas fa-desktop"></i> Web · Django</span>
                     <h3>SGPSI &mdash; Gestão de Prestação de Serviços</h3>
+                    <p>Sistema para empresas prestadoras de serviços: ordens de serviço, CRM com clientes PF/PJ (validação de CPF/CNPJ), contratos, agenda com verificação de conflito, faturamento e relatórios em PDF com papel timbrado.</p>
+                    <ul class="project-points">
+                        <li>Chat com IA sobre a operação (LangChain + LangGraph via Celery), com resposta em stream</li>
+                        <li>Perfis e acessos editáveis pelo administrador, sem depender do admin do Django</li>
+                        <li>Auditoria imutável com o antes e depois de cada alteração</li>
+                    </ul>
+                    <ul class="tech-badges">
+                        <li>Python</li><li>Django</li><li>PostgreSQL</li><li>Celery</li><li>RabbitMQ</li><li>Redis</li><li>LangChain</li><li>Reportlab</li>
+                    </ul>
                 </div>
-                <p>Sistema Django de instância única para empresas prestadoras de serviços: ordens de serviço, CRM (PF/PJ com validação de CPF/CNPJ), contratos, agenda com verificação de conflito, faturamento e relatórios em PDF com papel timbrado. Inclui um chat com IA sobre a operação (respostas em stream) e um RBAC editável (matriz Perfil × Permissão) com registro de auditoria.</p>
-                <ul class="tech-badges">
-                    <li>Python</li><li>Django</li><li>PostgreSQL</li><li>Celery</li><li>RabbitMQ</li><li>Redis</li><li>LangChain</li><li>LangGraph</li><li>Reportlab</li><li>Docker</li>
-                </ul>
             </article>
 
-            <article class="project-card reveal">
-                <div class="project-head">
+            <!-- Sistema para oficina mecânica -->
+            <article class="project-feature reveal">
+                <div class="project-gallery" data-title="Oficina Mecânica">
+                    <button type="button" class="gallery-main browser-frame" aria-label="Ampliar captura de tela">
+                        <span class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img src="imagens/projetos/oficina/02-dashboard.webp" alt="Dashboard da oficina com veículos no local, prazos e agenda do dia" width="1400" height="875" loading="lazy" decoding="async">
+                    </button>
+                    <div class="gallery-thumbs">
+                        <button type="button" class="thumb is-active" data-caption="Dashboard: veículos na oficina, prazos vencidos e contato rápido"><img src="imagens/projetos/oficina/02-dashboard.webp" alt="Dashboard" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Ordem de serviço: etapas, checklist, peças, totais e WhatsApp"><img src="imagens/projetos/oficina/04-ordem-de-servico.webp" alt="Ordem de serviço" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Financeiro: receita, despesas, lucro e gráfico de 6 meses"><img src="imagens/projetos/oficina/21-financeiro.webp" alt="Financeiro" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Agenda da semana com horários coloridos por mecânico"><img src="imagens/projetos/oficina/24-agenda.webp" alt="Agenda" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Clientes e veículos com histórico e LGPD"><img src="imagens/projetos/oficina/06-clientes.webp" alt="Clientes" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Tema claro, trocado na hora pelo usuário"><img src="imagens/projetos/oficina/17-tema-claro-dashboard.webp" alt="Tema claro" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Layout responsivo no celular"><img src="imagens/projetos/oficina/14-celular-dashboard.webp" alt="Versão para celular" loading="lazy"></button>
+                        <button type="button" class="thumb" data-caption="Nota de serviço em PDF"><img src="imagens/projetos/oficina/13-nota-de-servico-pdf.webp" alt="Nota de serviço em PDF" loading="lazy"></button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-type"><i class="fas fa-wrench"></i> Web · Django + HTMX</span>
+                    <h3>Sistema de Gestão para Oficina Mecânica</h3>
+                    <p>Gestão completa da oficina: clientes e veículos, catálogo de serviços e peças, ordens de serviço com etapas e checklist, agenda por mecânico, financeiro com contas a pagar e pagamento parcial na OS, e relatórios em PDF.</p>
+                    <ul class="project-points">
+                        <li>Dashboard operacional com prazos vencidos e contato rápido por WhatsApp</li>
+                        <li>Histórico da equipe (faltas, férias, atestados, cursos) e auditoria</li>
+                        <li>Tema claro/escuro, layout responsivo e API REST para um app mobile</li>
+                    </ul>
+                    <ul class="tech-badges">
+                        <li>Python</li><li>Django</li><li>HTMX</li><li>PostgreSQL</li><li>Django REST Framework</li><li>Reportlab</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Controle Empresarial -->
+            <article class="project-feature reveal">
+                <div class="project-gallery project-gallery--phones" data-title="Controle Empresarial">
+                    <div class="phone-strip">
+                        <button type="button" class="phone-frame" data-caption="Aparelho: apps bloqueados e livres, PIN de acesso e grupo"><img src="imagens/projetos/controle/11b-apps-bloqueados.webp" alt="Apps bloqueados de um aparelho" width="540" height="1200" loading="lazy"></button>
+                        <button type="button" class="phone-frame" data-caption="Admin: aparelhos pareados da empresa"><img src="imagens/projetos/controle/10-admin-aparelhos-lista.webp" alt="Lista de aparelhos" width="540" height="1200" loading="lazy"></button>
+                        <button type="button" class="phone-frame" data-caption="Segurança: tentativas de burla com foto da câmera frontal"><img src="imagens/projetos/controle/17-admin-seguranca.webp" alt="Tentativas de burla" width="540" height="1200" loading="lazy"></button>
+                        <button type="button" class="phone-frame" data-caption="Pedidos de liberação feitos pelos usuários"><img src="imagens/projetos/controle/16-admin-pedidos.webp" alt="Pedidos de liberação" width="540" height="1200" loading="lazy"></button>
+                        <button type="button" class="phone-frame" data-caption="Grupos com bloqueios compartilhados"><img src="imagens/projetos/controle/15-admin-grupos.webp" alt="Grupos" width="540" height="1200" loading="lazy"></button>
+                        <button type="button" class="phone-frame" data-caption="No aparelho: app trancado pelo PIN de 6 dígitos"><img src="imagens/projetos/controle/d04-pin-lock.webp" alt="Tela de PIN" width="540" height="1200" loading="lazy"></button>
+                        <button type="button" class="phone-frame" data-caption="No aparelho: status das permissões de proteção"><img src="imagens/projetos/controle/d06-status.webp" alt="Status do aparelho" width="540" height="1200" loading="lazy"></button>
+                    </div>
+                </div>
+                <div class="project-info">
                     <span class="project-type"><i class="fab fa-android"></i> Mobile · Android</span>
                     <h3>Controle Empresarial</h3>
+                    <p>App para uma empresa bloquear remotamente apps e sites nos aparelhos da equipe. O administrador pareia o dispositivo, organiza por grupos, vê os apps instalados e marca o que fica bloqueado; o usuário pede a liberação pelo próprio app.</p>
+                    <ul class="project-points">
+                        <li>Sincronização em tempo real via Firebase, funcionando também offline</li>
+                        <li>Anti-burla: PIN, administrador do aparelho e foto da tentativa</li>
+                        <li>Bloqueio via AccessibilityService &mdash; sem VPN e sem device owner</li>
+                    </ul>
+                    <ul class="tech-badges">
+                        <li>Kotlin</li><li>Android</li><li>Firebase / Firestore</li><li>Room</li><li>DataStore</li><li>AccessibilityService</li>
+                    </ul>
                 </div>
-                <p>App Android para uma empresa bloquear remotamente apps e sites nos aparelhos da equipe. O administrador cadastra o dispositivo, organiza por grupos (Cozinha, Operação...), vê os apps instalados e define o que fica bloqueado; o usuário solicita liberação pelo próprio app. Sincronização via Firebase e proteção anti-burla com PIN, administrador do dispositivo, captura de foto em tentativa de burla e overlay via AccessibilityService &mdash; sem VPN e sem device owner.</p>
-                <ul class="tech-badges">
-                    <li>Kotlin</li><li>Android</li><li>Firebase / Firestore</li><li>DataStore</li><li>AccessibilityService</li><li>DevicePolicyManager</li>
-                </ul>
             </article>
 
-            <article class="project-card reveal">
+            <!-- Carvclean -->
+            <article class="project-feature reveal">
+                <div class="project-gallery project-gallery--phones" data-title="Carvclean">
+                    <div class="phone-strip">
+                        <button type="button" class="phone-frame" data-caption="Login com opção de salvar as credenciais cifradas"><img src="imagens/projetos/carvclean/login.webp" alt="Tela de login do Carvclean" width="540" height="1200" loading="lazy"></button>
+                        <button type="button" class="phone-frame" data-caption="Dashboard: resumo do dia e escala de serviços"><img src="imagens/projetos/carvclean/dashboard.webp" alt="Dashboard do Carvclean" width="540" height="1200" loading="lazy"></button>
+                        <button type="button" class="phone-frame" data-caption="Componentes do design system em uso: seleção, listas e etapas"><img src="imagens/projetos/carvclean/componentes.webp" alt="Componentes do design system do Carvclean" width="540" height="1200" loading="lazy"></button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-type"><i class="fab fa-android"></i> Mobile · Android</span>
+                    <h3>Carvclean &mdash; Gestão de Limpeza de Estofados</h3>
+                    <p>App de gestão para empresa de limpeza de estofados, colchões, carpetes e cortinas: clientes, funcionários, serviços e produtos, ordem de serviço com baixa automática de estoque e recibo em PDF com termo de garantia.</p>
+                    <ul class="project-points">
+                        <li>Vencimento da garantia alimenta a lista de recontato, com chamada direta no WhatsApp</li>
+                        <li>Funciona offline: o técnico conclui o serviço no cliente mesmo sem sinal</li>
+                        <li>Clean Architecture + MVVM, rodando no plano gratuito do Firebase</li>
+                    </ul>
+                    <ul class="tech-badges">
+                        <li>Kotlin</li><li>Jetpack Compose</li><li>Material 3</li><li>Hilt</li><li>Coroutines / Flow</li><li>Firebase</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="project-card project-card--compact reveal">
                 <div class="project-head">
                     <span class="project-type"><i class="fas fa-shield-halved"></i> Mobile · Android</span>
                     <h3>AFSCBloque &mdash; Controle Parental</h3>
                 </div>
-                <p>Bloqueador pessoal de apps e sites com foco em controle parental. Um único mecanismo &mdash; o serviço de acessibilidade &mdash; detecta o app em primeiro plano e a URL no navegador e sobrepõe uma tela de bloqueio. Modos por app (Bloqueio, Limite de tempo, Rotina por horário, Livre), bloqueio por domínio com importação em massa e PIN com folga de 5 minutos. Tudo offline: nada de uso ou navegação sai do aparelho.</p>
+                <p>Bloqueador pessoal de apps e sites com foco em controle parental. O serviço de acessibilidade detecta o app em primeiro plano e a URL no navegador e sobrepõe uma tela de bloqueio. Modos por app (Bloqueio, Limite de tempo, Rotina por horário, Livre), bloqueio por domínio e PIN. Tudo offline: nada de uso ou navegação sai do aparelho.</p>
                 <ul class="tech-badges">
                     <li>Kotlin</li><li>Android</li><li>AccessibilityService</li><li>Usage Stats API</li><li>Room</li>
                 </ul>
@@ -262,7 +358,7 @@
     <section class="stats">
         <div class="stats-grid">
             <div class="stat reveal">
-                <div class="stat-number">3+</div>
+                <div class="stat-number">5+</div>
                 <div class="stat-label">Sistemas Desenvolvidos</div>
             </div>
             <div class="stat reveal">
@@ -342,6 +438,17 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- Visualizador das capturas de tela -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Captura de tela ampliada" hidden>
+        <button type="button" class="lightbox-close" aria-label="Fechar"><i class="fas fa-xmark"></i></button>
+        <button type="button" class="lightbox-nav lightbox-prev" aria-label="Imagem anterior"><i class="fas fa-chevron-left"></i></button>
+        <figure class="lightbox-figure">
+            <img src="" alt="">
+            <figcaption><strong class="lightbox-title"></strong> <span class="lightbox-caption"></span> <span class="lightbox-count"></span></figcaption>
+        </figure>
+        <button type="button" class="lightbox-nav lightbox-next" aria-label="Próxima imagem"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
